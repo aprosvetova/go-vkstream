@@ -16,26 +16,26 @@ type Rule struct {
 //Event is a type that represents new action. Call Listen method to get events
 type Event struct {
 	Type string `json:"event_type"`
-	Id   struct {
-		PostOwnerId  int `json:"post_owner_id"`
-		PostId       int `json:"post_id"`
-		CommentId    int `json:"comment_id"`
-		SharedPostId int `json:"shared_post_id"`
+	ID   struct {
+		PostOwnerID  int `json:"post_owner_id"`
+		PostID       int `json:"post_id"`
+		CommentID    int `json:"comment_id"`
+		SharedPostID int `json:"shared_post_id"`
 	} `json:"event_id"`
-	Url                    string   `json:"event_url"`
+	URL                    string   `json:"event_url"`
 	Text                   string   `json:"text"`
 	Action                 string   `json:"action"`
 	ActionTime             int      `json:"action_time"`
 	CreationTime           int      `json:"creation_time"`
 	SharedPostText         string   `json:"shared_post_text"`
 	SharedPostCreationTime int      `json:"shared_post_creation_time"`
-	SignerId               int      `json:"signer_id"`
+	SignerID               int      `json:"signer_id"`
 	Tags                   []string `json:"tags"`
 	Author                 struct {
-		Id                  int    `json:"id"`
-		Url                 string `json:"author_url"`
-		SharedPostAuthorId  int    `json:"shared_post_author_id"`
-		SharedPostAuthorUrl string `json:"shared_post_author_url"`
+		ID                  int    `json:"id"`
+		URL                 string `json:"author_url"`
+		SharedPostAuthorID  int    `json:"shared_post_author_id"`
+		SharedPostAuthorURL string `json:"shared_post_author_url"`
 		Platform            int    `json:"platform"`
 	} `json:"author"`
 }

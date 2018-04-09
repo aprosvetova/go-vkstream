@@ -35,7 +35,7 @@ func main() {
 	log.Print("Started listening")
 	go func() {
 		for event := range events {
-			log.Print(event.Url) //will just print the url of the post/comment/etc
+			log.Print(event.URL) //will just print the url of the post/comment/etc
 		}
 	}()
 	time.AfterFunc(time.Minute, func() {

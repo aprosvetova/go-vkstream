@@ -157,7 +157,7 @@ func (stream *VkStream) Listen() (<-chan Event, error) {
 	c, wsResp, err := websocket.DefaultDialer.Dial(u.String(), nil)
 	if err != nil {
 		if err == websocket.ErrBadHandshake {
-			return nil, errors.New(fmt.Sprintf("handshake failed with status %d", wsResp.StatusCode))
+			return nil, fmt.Errorf("handshake failed with status %d", wsResp.StatusCode)
 		}
 		return nil, err
 	}
