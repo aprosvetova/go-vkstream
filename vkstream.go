@@ -31,6 +31,9 @@ func NewStreamWithToken(accessToken string) (*VkStream, error) {
 	defer resp.Body.Close()
 
 	bodyBuf, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
 	var v vkAuthResponse
 	if err := json.Unmarshal(bodyBuf, &v); err != nil {
 		return nil, err
@@ -55,6 +58,9 @@ func (stream *VkStream) GetRules() ([]Rule, error) {
 	}
 	defer resp.Body.Close()
 	bodyBuf, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
 	var v vkRulesResponse
 	if err := json.Unmarshal(bodyBuf, &v); err != nil {
 		return nil, err
@@ -87,6 +93,9 @@ func (stream *VkStream) AddRule(value string, tag string) error {
 	}
 	defer resp.Body.Close()
 	bodyBuf, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
 	var v vkEmptyResponse
 	if err := json.Unmarshal(bodyBuf, &v); err != nil {
 		return err
@@ -120,6 +129,9 @@ func (stream *VkStream) DeleteRule(tag string) error {
 	}
 	defer resp.Body.Close()
 	bodyBuf, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
 	var v vkEmptyResponse
 	if err := json.Unmarshal(bodyBuf, &v); err != nil {
 		return err
