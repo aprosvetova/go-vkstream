@@ -17,7 +17,6 @@ import (
 	"github.com/aprosvetova/go-vkstream"
 	"log"
 	"time"
-	"go-vkstream"
 )
 
 func main() {
